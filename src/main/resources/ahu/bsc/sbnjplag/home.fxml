@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Pos?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ahu.bsc.sbnjplag.SBNJPlagController"
+            styleClass="main-container">
+
+    <center>
+        <VBox styleClass="view-section">
+            <VBox styleClass="directory-container" alignment="CENTER">
+                <Label fx:id="directoryLabel" styleClass="directory-label" wrapText="true"/>
+            </VBox>
+
+            <VBox styleClass="run-button-container" alignment="BOTTOM_RIGHT">
+                <Button text="Run" onAction="#runCommand" fx:id="runButton" disable="true" styleClass="run-button"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <top>
+        <VBox styleClass="menu-section">
+            <HBox spacing="20">
+                <Label text="SBN JPlag" styleClass="section-label"/>
+            </HBox>
+
+            <HBox spacing="50" styleClass="button-container">
+                <VBox spacing="10">
+                    <Label text="Submissions" styleClass="button-label"/>
+                    <Button onAction="#selectDirectory" styleClass="select-button">Browse</Button>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label text="Language" styleClass="button-label"/>
+                    <ChoiceBox fx:id="languageChoiceBox" onAction="#selectLanguage" styleClass="select-button">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Java"/>
+                                <String fx:value="C"/>
+                                <String fx:value="Python"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="20" styleClass="button-container">
+                <VBox spacing="10">
+                    <Label styleClass="button-label">
+                        <Tooltip text="Multiple files are line-separated!"/>
+                        Exclude files
+                    </Label>
+                    <TextArea fx:id="excludedFilesInputTextField" styleClass="text-area"/>
+                    <Button text="Exclude" onAction="#saveFilesToExclude" styleClass="save-button"/>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label styleClass="button-label">
+                        <Tooltip text="Lower sensitivity might result in false-positives!"/>
+                        Sensitivity
+                    </Label>
+                    <TextField fx:id="sensitivityNumberInputTextField" styleClass="select-button"/>
+                    <Button text="Ok" onAction="#saveSensitivityNumber" styleClass="save-button"/>
+                </VBox>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <bottom>
+        <VBox styleClass="result-section">
+            <HBox spacing="20">
+                <Hyperlink text="Go to Report Viewer" onAction="#openReportViewer" styleClass="hyperlink"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

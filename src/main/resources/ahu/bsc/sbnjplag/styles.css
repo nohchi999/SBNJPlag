@@ -1,0 +1,87 @@
+.main-container {
+    -fx-background-color: #F8F8F8;
+}
+
+.menu-section {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-background-color: #D3D3D3;
+}
+
+.menu-section .section-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.menu-section .button-container {
+    -fx-spacing: 10;
+}
+
+.menu-section .button-container .button-label {
+    -fx-font-size: 14px;
+}
+
+.menu-section .button-container .select-button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+}
+
+.menu-section .button-container .save-button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+}
+
+.view-section {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-background-color: #EFEFEF;
+}
+
+.view-section .directory-container {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.view-section .directory-container .directory-label {
+    -fx-font-size: 18px;
+}
+
+.view-section .run-button-container {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+}
+
+.view-section .run-button-container .run-button {
+    -fx-font-size: 18px;
+    -fx-pref-width: 150px;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8 16;
+    -fx-cursor: HAND;
+}
+
+.view-section .run-button-container .run-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.view-section .run-button-container .run-button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: DEFAULT;
+}
+
+.result-section {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-background-color: #D3D3D3;
+}
+
+.result-section .hyperlink {
+    -fx-font-size: 14px;
+    -fx-text-fill: #0070c0;
+    -fx-cursor: HAND;
+}
+
+.result-section .hyperlink:hover {
+    -fx-text-fill: #004080;
+}
